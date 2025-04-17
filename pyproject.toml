@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "animalsounds"
+dynamic = ["version"]
+authors = [
+  { name="Philip Crotwell", email="crotwell@seis.sc.edu" },
+]
+description = "Speak like snakes and bees."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering"
+]
+
+dependencies = [
+    "requests"
+]
+
+[project.urls]
+Homepage = "https://github.com/crotwell/animalsounds"
+Documentation = "https://animalsounds.readthedocs.io"
+Repository = "https://github.com/crotwell/animalsounds"
+Issues = "https://github.com/crotwell/animalsounds/issues"
+
+[project.scripts]
+"sounds_outside" = "animalsounds.sounds_outside:main"
+"snake" = "animalsounds.snake:main"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    ]
+
+[tool.hatch.version]
+path = "src/animalsounds/__init__.py"
+[tool.hatch.build.targets.wheel]
+packages = ["src/animalsounds"]
