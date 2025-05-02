@@ -6,6 +6,16 @@ from . import __version__
 
 import argparse
 
+def makeSounds(hiss=3, swarm=2, verbose=False):
+    if verbose:
+        print("getting ready to make sounds...")
+        print(f"the snake value is {hiss}")
+        print(f"the bee swarm is {swarm}")
+        print()
+    print("outside sounds like...")
+    print(beeSounds(swarm))
+    print(snakeSpeak(hiss))
+
 def createArgs():
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--hiss", type=int,
@@ -23,13 +33,7 @@ def main() -> int:
     if args.version:
         print(__version__)
     else:
-        if args.verbose:
-            print("getting ready to make sounds...")
-            print(f"the snake value is {args.hiss}")
-            print()
-        print("outside sounds like...")
-        print(beeSounds(2))
-        print(snakeSpeak(args.hiss))
+        makeSounds(args.hiss, verbose=args.verbose)
     return 0
 
 if __name__ == '__main__':
