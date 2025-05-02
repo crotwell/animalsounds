@@ -32,6 +32,10 @@ recompile, reinstall with same version
 pip install dist/animalsounds-0.0.1-py3-none-any.whl --force-reinstall --no-deps
 ```
 
+```
+sounds_outside --hiss 8  --verbose
+```
+
 ## Useful links:
 https://git-scm.com/
 https://pypi.org/
