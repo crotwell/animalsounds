@@ -5,6 +5,8 @@ a python library to speak like snakes and bees.
 
 ## Install:
 
+If this was actually published to pypi, you could...
+
 ```
 pip install animalsounds
 ```
